@@ -599,7 +599,7 @@ class Catalog:
         }
         r = self.session.get(cs_url, headers=headers, params=params)
         self._cache.clear()
-        coverages = json.loads(r.text, object_hook=_decode_dict)
+        coverages = json.loads(r.text)
         return coverages
 
     def mosaic_coverage_schema(self, coverage, store):
@@ -622,7 +622,7 @@ class Catalog:
         }
         r = self.session.get(cs_url, headers=headers, params=params)
         self._cache.clear()
-        schema = json.loads(r.text, object_hook=_decode_dict)
+        schema = json.loads(r.text)
         return schema
 
     def mosaic_granules(self, coverage, store, filter_=None, limit=None,
@@ -649,7 +649,7 @@ class Catalog:
         }
         r = self.session.get(cs_url, headers=headers, params=params)
         self._cache.clear()
-        granules = json.loads(r.text, object_hook=_decode_dict)
+        granules = json.loads(r.text)
         return granules
 
     def mosaic_delete_granule(self, coverage, store, granule_id):
