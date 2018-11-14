@@ -12,7 +12,7 @@ import requests
 
 from geoserver import settings
 from geoserver.resource import FeatureType, Coverage
-from geoserver.support import prepare_upload_bundle, _decode_dict
+from geoserver.support import prepare_upload_bundle
 from geoserver.workspace import workspace_from_index, Workspace
 from geoserver.store import coveragestore_from_index, \
     wmsstore_from_index, datastore_from_index, UnsavedDataStore, \
